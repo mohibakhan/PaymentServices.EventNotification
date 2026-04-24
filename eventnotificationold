@@ -1,0 +1,40 @@
+public class EventNotification : IEventNotification
+{
+    [JsonProperty("event")]
+    public string Event { get; set; }
+    [JsonProperty("subject")]
+    public string Subject { get; set; }
+    [JsonProperty("description")]
+    public string Description { get; set; }
+
+    [JsonProperty("code")]
+    public int? Code { get; set; }
+
+    [JsonProperty("metadata")]
+    public EvolveMetadata Metadata { get; set; }
+
+    [JsonProperty("from")]
+    public TransactionParty From { get; set; }
+    [JsonProperty("to")]
+    public TransactionParty To { get; set; }
+    //[JsonProperty("amount")]
+    //public decimal Amount { get; set; }
+    //[JsonProperty("firstSeenAt")]
+    //public DateTime FirstSeenAt { get; set; }
+    //[JsonProperty("effectiveAt")]
+    //public DateTime EffectiveAt { get; set; }
+    //[JsonProperty("currentBalance")]
+    //public Decimal CurrentBalance { get; set; }
+    //[JsonProperty("watermarkTarget")]
+    //public Decimal WatermarkTarget { get; set; }
+    //[JsonProperty("customerName")]
+    //public string CustomerName { get; set; }
+
+    public object Data { get; set; }  //contents differ per event
+
+}
+
+public class EvolveMetadata
+{
+    public string EvolveId { get; set; }
+}
